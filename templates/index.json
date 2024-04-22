@@ -97,16 +97,16 @@
             "swatch_shape": "circle"
           }
         },
-        "quantity_selector_ABwiqg": {
-          "type": "quantity_selector",
-          "settings": {
-          }
-        },
         "text_gGaXXA": {
           "type": "text",
           "settings": {
             "text": "",
             "text_style": "body"
+          }
+        },
+        "quantity_selector_ABwiqg": {
+          "type": "quantity_selector",
+          "settings": {
           }
         },
         "buy_buttons_hGRF8X": {
@@ -128,8 +128,8 @@
         "title_3cmh8w",
         "price_EjkHHL",
         "variant_picker_pmL3y6",
-        "quantity_selector_ABwiqg",
         "text_gGaXXA",
+        "quantity_selector_ABwiqg",
         "buy_buttons_hGRF8X",
         "share_LPVdQa"
       ],
