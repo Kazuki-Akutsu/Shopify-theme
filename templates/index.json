@@ -101,7 +101,7 @@
           "type": "text",
           "settings": {
             "text": "{{ section.settings.product.metafields.custom.s_size.value }}",
-            "text_style": "body"
+            "text_style": "uppercase"
           }
         },
         "quantity_selector_ABwiqg": {
