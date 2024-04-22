@@ -102,6 +102,13 @@
           "settings": {
           }
         },
+        "text_gGaXXA": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "body"
+          }
+        },
         "buy_buttons_hGRF8X": {
           "type": "buy_buttons",
           "settings": {
@@ -122,6 +129,7 @@
         "price_EjkHHL",
         "variant_picker_pmL3y6",
         "quantity_selector_ABwiqg",
+        "text_gGaXXA",
         "buy_buttons_hGRF8X",
         "share_LPVdQa"
       ],
