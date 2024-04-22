@@ -100,7 +100,7 @@
         "text_gGaXXA": {
           "type": "text",
           "settings": {
-            "text": "{{ section.settings.product.metafields.custom.s_size.value }}",
+            "text": "aaaaa",
             "text_style": "uppercase"
           }
         },
