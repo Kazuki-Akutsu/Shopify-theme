@@ -32,6 +32,10 @@
     }
   {%- endstyle -%}
 
+
+
+
+
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
   {%- if product.quantity_price_breaks_configured? -%}
@@ -87,8 +91,11 @@
               {%- when 'text' -%}
                 <p
                   class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
+
                   {{ block.shopify_attributes }}
                 >
+
+
                   {{- block.settings.text -}}
                 </p>
               {%- when 'title' -%}
@@ -109,6 +116,7 @@
                     price_class: 'price--large'
                   -%}
                 </div>
+
                 {%- if product.quantity_price_breaks_configured? -%}
                   <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
                     <span>{{ 'products.product.volume_pricing.note' | t }}</span>
@@ -129,6 +137,7 @@
                     {{ form | payment_terms }}
                   {%- endform -%}
                 </div>
+
               {%- when 'inventory' -%}
                 <p
                   class="product__inventory no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
@@ -184,6 +193,7 @@
                     {%- endif -%}
                   {%- endif -%}
                 </p>
+
               {%- when 'description' -%}
                 {%- if product.description != blank -%}
                   <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
@@ -430,6 +440,11 @@
                     </volume-pricing>
                   {%- endif -%}
                 </div>
+
+
+                {% comment %} バリエーション {% endcomment %}
+                <div id="variant-details">{{ product.selected_or_first_available_variant.metafields.custom.s_size }}</div>
+
               {%- when 'popup' -%}
                 <modal-opener
                   class="product-popup-modal__opener no-js-hidden quick-add-hidden"
@@ -653,6 +668,9 @@
       {%- endif -%}
     </div>
 
+
+
+
     {% render 'product-media-modal', variant_images: variant_images %}
 
     {% assign popups = section.blocks | where: 'type', 'popup' %}
@@ -680,6 +698,13 @@
         </div>
       </modal-dialog>
     {%- endfor -%}
+
+
+
+
+
+
+
 
     {%- if product.media.size > 0 -%}
       <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
@@ -717,6 +742,13 @@
         });
       });
     </script>
+
+
+
+
+
+
+
 
     {%- liquid
       if product.selected_or_first_available_variant.featured_media
@@ -772,6 +804,27 @@
     </script>
   </div>
 </section>
+
+
+
+
+
+
+
+
+<script id="variant_metafield_data" type="application/json">
+  {
+    {% for variant in product.variants %}
+    {% assign metafield_content = variant.metafields.custom.s_size %}
+    "{{ variant.id }}" : "{{ metafield_content }}" {% unless forloop.last %}, {% endunless %}
+    {% endfor %}
+  }
+  </script>
+
+
+
+
+
 
 {% schema %}
 {

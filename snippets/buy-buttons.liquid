@@ -97,6 +97,12 @@
             {{ form | payment_button }}
           {%- endif -%}
         </div>
+        {% if product.variants.first.inventory_management == "shopify" and product.variants.first.inventory_quantity < 5 and product.variants.first.inventory_quantity > 0 %}
+Low stock
+{% else %}
+Available!
+{% endif %}
+</div>
       {%- endform -%}
     </product-form>
   {%- else -%}
