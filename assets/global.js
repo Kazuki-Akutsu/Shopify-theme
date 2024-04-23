@@ -970,8 +970,28 @@ class VariantSelects extends HTMLElement {
       this.updateVariantInput();
       this.renderProductInfo();
       this.updateShareUrl();
+
+
+      this.updatevariantDetails();
+
+
     }
   }
+
+
+  updatevariantDetails(){
+      //console.log('onVariantChange');
+      //console.log(this.currentVariant);
+
+      const allvariantMetafieldData = JSON.parse(document.querySelector('#variant_metafield_data').textContent)
+      //console.log(allvariantMetafieldData);
+
+      const VariantDetailsTextElement = document.querySelector('#variant-details');
+      VariantDetailsTextElement.innerHTML = allvariantMetafieldData[this.currentVariant.id];
+  }
+
+
+
 
   updateOptions() {
     this.options = Array.from(this.querySelectorAll('select, fieldset'), (element) => {

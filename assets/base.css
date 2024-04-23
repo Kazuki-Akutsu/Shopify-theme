@@ -3517,3 +3517,38 @@ details-disclosure > details {
     --border-offset: 0px; /* Prevent the border from growing on buttons when this effect is on. */
   }
 }
+
+/* ____________________________________________________ */
+/* カスタムCSS */
+/* ____________________________________________________ */
+
+  /* ボタン背景色 */
+  .product-form__buttons button {
+    background: green;
+  }
+  /* ボタンカラー */
+  .product-form__buttons button span {
+    color: #fff;
+  }
+  /* ホバー */
+  .product-form__buttons button:hover {
+    background: blue;
+    transition: all 0.5s ease;
+  }
+  .product-form__buttons .button:not([disabled]):hover::after{
+    box-shadow: none;
+  }
+  /* 売り切れの場合カラー */
+  .product-form__buttons .button:disabled {
+    background: gray;
+    border: none;
+    opacity: 1;
+  }
+  .product-form__buttons button::after{
+    box-shadow: none;
+  }
+
+
+
+
+
